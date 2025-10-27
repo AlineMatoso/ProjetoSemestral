@@ -15,9 +15,11 @@ namespace LivrosApi.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Configurar o nome da tabela para "Livros" (singular)
+
             modelBuilder.Entity<LivrosModel>().ToTable("Livros");
             
             // Configurar a relação entre Autor e Livros
+            
             modelBuilder.Entity<LivrosModel>()
                 .HasOne(l => l.Autor)
                 .WithMany(a => a.Livros)
