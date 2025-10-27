@@ -27,3 +27,4 @@ app.MapGet("/", async (AppDbContext db) =>
 );
 
 app.Run();
+
