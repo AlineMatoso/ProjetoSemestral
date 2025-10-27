@@ -21,6 +21,9 @@ app.MapPost("/livros", async (LivrosModel livro, AppDbContext context) =>
     return Results.Created($"/livros/{livro.Id}", livro);
 });
 
-app.MapGet("/", () => "API de Livros está funcionando!");
+// Endpoint GET - Buscar todos os times
+app.MapGet("/", async (AppDbContext db) =>
+    await db.Livros.ToListAsync()
+);
 
 app.Run();
