@@ -1,18 +1,28 @@
-
 using Microsoft.EntityFrameworkCore;
 using LivrosApi.Data;
+using LivrosApi.Models;
 
-var builder = WebApplication.CreateBuilder(args); // Inicializa a configuração base da aplicação ASP.NET Core,
-//  permitindo registrar serviços, configurações e logs antes de construir e rodar o servidor
+var builder = WebApplication.CreateBuilder(args);
 
-
-// Configurar o SQLite
-builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite("Data Source=livros.db"));
+// Configurar SQLite (corrigir os erros de digitação)
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlite("Data Source=livros.db"));
 
 var app = builder.Build();
-// builder é um modo de configuração
-// app é um modo de execução
 
-app.MapGet("/", () => "Hello World!");
+// Endpoints para Livros (corrigir a sintaxe)
+app.MapGet("/livros", async (AppDbContext context) =>
+    await context.Livros.Include(l => l.Autor).ToListAsync());
 
+app.MapPost("/livros", async (LivrosModel livro, AppDbContext context) =>
+{
+    context.Livros.Add(livro);
+    await context.SaveChangesAsync();
+    return Results.Created($"/livros/{livro.Id}", livro);
+});
+
+// Endpoint GET - Buscar todos os times
+app.MapGet("/", async (AppDbContext db) =>
+    await db.Livros.ToListAsync()
+);
 app.Run();
