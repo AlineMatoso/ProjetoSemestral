@@ -1,30 +1,23 @@
-using Microsoft.EntityFrameworkCore;
 using LivrosApi.Data;
-using LivrosApi.Models;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configurar SQLite
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite("Data Source=livros.db"));
+    options.UseSqlite("Data Source=biblioteca.db"));
+
+builder.Services.AddControllers();
 
 var app = builder.Build();
 
-// Endpoints para Livros (CÓDIGO CORRIGIDO)
-app.MapGet("/livros", async (AppDbContext context) =>
-    await context.Livros.Include(l => l.Autor).ToListAsync());
-
-app.MapPost("/livros", async (LivrosModel livro, AppDbContext context) =>
+if (app.Environment.IsDevelopment())
 {
-    context.Livros.Add(livro);
-    await context.SaveChangesAsync();
-    return Results.Created($"/livros/{livro.Id}", livro);
-});
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
-// Endpoint GET - Buscar todos os times
-app.MapGet("/", async (AppDbContext db) =>
-    await db.Livros.ToListAsync()
-);
+app.MapControllers();
+
+app.MapGet("/", () => "Hello World!");
 
 app.Run();
-

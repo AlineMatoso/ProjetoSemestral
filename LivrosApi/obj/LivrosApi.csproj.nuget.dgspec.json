@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/alinematosodelima/Desktop/Desenvolvimento de Soft. Visual/ProjetoSemestral/LivrosApi/LivrosApi.csproj": {}
+    "C:\\Users\\user\\Positivo\\software_visual\\ProjetoSemestral\\LivrosApi\\LivrosApi.csproj": {}
   },
   "projects": {
-    "/Users/alinematosodelima/Desktop/Desenvolvimento de Soft. Visual/ProjetoSemestral/LivrosApi/LivrosApi.csproj": {
+    "C:\\Users\\user\\Positivo\\software_visual\\ProjetoSemestral\\LivrosApi\\LivrosApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/alinematosodelima/Desktop/Desenvolvimento de Soft. Visual/ProjetoSemestral/LivrosApi/LivrosApi.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Positivo\\software_visual\\ProjetoSemestral\\LivrosApi\\LivrosApi.csproj",
         "projectName": "LivrosApi",
-        "projectPath": "/Users/alinematosodelima/Desktop/Desenvolvimento de Soft. Visual/ProjetoSemestral/LivrosApi/LivrosApi.csproj",
-        "packagesPath": "/Users/alinematosodelima/.nuget/packages/",
-        "outputPath": "/Users/alinematosodelima/Desktop/Desenvolvimento de Soft. Visual/ProjetoSemestral/LivrosApi/obj/",
+        "projectPath": "C:\\Users\\user\\Positivo\\software_visual\\ProjetoSemestral\\LivrosApi\\LivrosApi.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user\\Positivo\\software_visual\\ProjetoSemestral\\LivrosApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/alinematosodelima/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -53,8 +53,6 @@
               "version": "[7.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.0, )"
             }
@@ -78,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
