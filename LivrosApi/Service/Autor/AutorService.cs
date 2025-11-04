@@ -1,10 +1,13 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
 using LivrosApi.Data;
+using LivrosApi.DTO.Autor;
 using LivrosApi.Models;
 using Microsoft.EntityFrameworkCore;
+using SQLitePCL;
 
 namespace LivrosApi.Controllers.AutorService
 {
@@ -17,17 +20,86 @@ namespace LivrosApi.Controllers.AutorService
             _context = context;
         }
 
-        public Task<ResponseModel<AutorModel>> BuscarAutoriPorId(int idAutor)
+        public  async Task<ResponseModel<List<AutorModel>>> CriarAutor(AutorCriacaoDto autorCriacaoDto)
         {
-            throw new NotImplementedException();
+            ResponseModel<List<AutorModel>> resposta = new ResponseModel<List<AutorModel>>();
+
+            try{
+                var autor = new AutorModel()
+                {
+                    Nome = autorCriacaoDto.Nome,
+                    Sobrenome = autorCriacaoDto.Sobrenome
+                };
+
+                _context.Add(autor);
+                await _context.SaveChangesAsync();
+
+                resposta.Dados = await _context.Autores.ToListAsync();
+                
+                resposta.Mensagem = "Autor criado com sucesso!";
+
+                return resposta;
+                
+            } catch (Exception ex){
+                resposta.Mensagem = ex.Message;
+                resposta.Status = false;
+                return resposta;
+            }
+            
+
+
         }
 
-        public Task<ResponseModel<AutorModel>> BuscarAutorPorIdLivro(int idLivro)
+        async Task<ResponseModel<AutorModel>> AutorInterface.BuscarAutoriPorId(int idAutor)
         {
-            throw new NotImplementedException();
+            ResponseModel<AutorModel> resposta = new ResponseModel<AutorModel>();
+            try {
+                var autor = await _context.Autores.FirstOrDefaultAsync(autorBanco =>autorBanco.Id == idAutor);
+
+                if (autor == null){
+                    resposta.Mensagem = "Nenhum autor localizado. ";
+                    return resposta;
+                }
+                resposta.Dados = autor;
+                resposta.Mensagem = "Autor Localizado.";
+                return resposta;
+            }
+            catch (Exception ex) {
+                resposta.Mensagem = ex.Message;
+                resposta.Status = false;
+                return resposta;
+            }
         }
 
-        public async Task<ResponseModel<List<AutorModel>>> ListarAutores()
+        async Task<ResponseModel<AutorModel>> AutorInterface.BuscarAutorPorIdLivro(int idLivro)
+        {
+            ResponseModel<AutorModel> resposta = new ResponseModel<AutorModel>();
+            try
+            {
+                var livro = await _context.Livros.Include(a => a.Autor).FirstOrDefaultAsync(livroBanco => livroBanco.Id == idLivro);
+                //entra do livro model, ai quando chega em autor model ele entra em autor model e 
+                // depois ve todos as propriedades do autor
+
+                if (livro == null)
+                {
+                    resposta.Mensagem = ("Nenhum autor localizado. ");
+                    return resposta;
+                }
+                resposta.Dados = livro.Autor;
+                resposta.Mensagem = ("Autor Localizado!");
+                return resposta;
+            }
+            catch (Exception ex)
+            {
+                resposta.Mensagem = ex.Message;
+                resposta.Status = false;
+                return resposta;
+            }
+
+
+        }
+
+        async Task<ResponseModel<List<AutorModel>>> AutorInterface.ListarAutores()
         {
             ResponseModel<List<AutorModel>> resposta = new ResponseModel<List<AutorModel>>();
             try
