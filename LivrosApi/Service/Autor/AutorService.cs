@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
 using LivrosApi.Data;
+using LivrosApi.DTO;
 using LivrosApi.DTO.Autor;
 using LivrosApi.Models;
 using Microsoft.EntityFrameworkCore;
@@ -46,6 +48,74 @@ namespace LivrosApi.Controllers.AutorService
                 return resposta;
             }
             
+
+
+        }
+
+        public async Task<ResponseModel<List<AutorModel>>> EditarAutor(AutorEdicaoDto autorEdicaoDto)
+        {
+            ResponseModel<List<AutorModel>> resposta = new ResponseModel<List<AutorModel>>();
+
+            try
+            {
+                var autor = await _context.Autores.FirstOrDefaultAsync(autorBanco => autorBanco.Id == autorEdicaoDto.Id);
+                if (autor == null)
+                {
+                    resposta.Mensagem = "Nenhum autor com este ID.";
+                    return resposta;
+                }
+
+                autor.Nome = autorEdicaoDto.Nome;
+
+                autor.Sobrenome = autorEdicaoDto.Sobrenome;
+
+                _context.Update(autor);
+
+                await _context.SaveChangesAsync();
+
+                resposta.Dados = await _context.Autores.ToListAsync();
+                resposta.Mensagem = "Autor atualizado.";
+
+                return resposta;
+
+            } catch (Exception ex) {
+                resposta.Mensagem = ex.Message;
+                resposta.Status = false;
+                return resposta;
+            }
+
+
+
+
+
+        }
+
+        async public Task<ResponseModel<List<AutorModel>>> ExcluirAutor(int idAutor)
+        {
+            ResponseModel<List<AutorModel>> resposta = new ResponseModel<List<AutorModel>>();
+            try
+            {
+                var autor = await _context.Autores.FirstOrDefaultAsync(autorBanco => autorBanco.Id == idAutor);
+
+                if (autor == null)
+                {
+                    resposta.Mensagem = "Nenhum autor localizado.";
+                    return resposta;
+                }
+                _context.Remove(autor);
+                await _context.SaveChangesAsync();
+
+                resposta.Dados = await _context.Autores.ToListAsync();
+
+                resposta.Mensagem = "Autor excluido. ";
+                return resposta;
+
+            } catch (Exception ex) {
+                resposta.Mensagem = ex.Message;
+                resposta.Status = false;
+                return resposta;
+            }
+
 
 
         }
