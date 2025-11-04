@@ -63,3 +63,8 @@
 /Users/alinematosodelima/Desktop/Desenvolvimento de Soft. Visual/Projeto Aline/ProjetoSemestral/LivrosApi/obj/Debug/net9.0/LivrosApi.pdb
 /Users/alinematosodelima/Desktop/Desenvolvimento de Soft. Visual/Projeto Aline/ProjetoSemestral/LivrosApi/obj/Debug/net9.0/LivrosApi.genruntimeconfig.cache
 /Users/alinematosodelima/Desktop/Desenvolvimento de Soft. Visual/Projeto Aline/ProjetoSemestral/LivrosApi/obj/Debug/net9.0/ref/LivrosApi.dll
+/Users/alinematosodelima/Desktop/Desenvolvimento de Soft. Visual/Projeto Aline/ProjetoSemestral/LivrosApi/obj/Debug/net9.0/LivrosApi.MvcApplicationPartsAssemblyInfo.cs
+/Users/alinematosodelima/Desktop/Desenvolvimento de Soft. Visual/Projeto Aline/ProjetoSemestral/LivrosApi/bin/Debug/net9.0/Microsoft.OpenApi.dll
+/Users/alinematosodelima/Desktop/Desenvolvimento de Soft. Visual/Projeto Aline/ProjetoSemestral/LivrosApi/bin/Debug/net9.0/Swashbuckle.AspNetCore.Swagger.dll
+/Users/alinematosodelima/Desktop/Desenvolvimento de Soft. Visual/Projeto Aline/ProjetoSemestral/LivrosApi/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/alinematosodelima/Desktop/Desenvolvimento de Soft. Visual/Projeto Aline/ProjetoSemestral/LivrosApi/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerUI.dll
