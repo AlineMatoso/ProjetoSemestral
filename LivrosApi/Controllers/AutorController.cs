@@ -31,7 +31,7 @@ namespace LivrosApi.Controllers
         [HttpGet("BuscarAutoriPorId/{idAutor}")]
         public async Task<ActionResult<ResponseModel<AutorModel>>> BuscarAutoriPorId(int idAutor)
         {
-            var autor = await _autorInterface.BuscarAutoriPorId(idAutor);
+            var autor = await _autorInterface.BuscarAutorPorId(idAutor);
             return Ok(autor);
         }
 

@@ -120,7 +120,7 @@ namespace LivrosApi.Controllers.AutorService
 
         }
 
-        async Task<ResponseModel<AutorModel>> AutorInterface.BuscarAutoriPorId(int idAutor)
+        async Task<ResponseModel<AutorModel>> AutorInterface.BuscarAutorPorId(int idAutor)
         {
             ResponseModel<AutorModel> resposta = new ResponseModel<AutorModel>();
             try {
