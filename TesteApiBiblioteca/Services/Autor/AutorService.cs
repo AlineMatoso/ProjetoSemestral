@@ -22,6 +22,7 @@ namespace TesteApiBiblioteca.Services.Autor
                 if (autor == null)
                 {
                     resposta.Mensagem = "Nenhum registro localizado!";
+                    resposta.Status = false;
                     return resposta;
                 }
 
@@ -48,6 +49,7 @@ namespace TesteApiBiblioteca.Services.Autor
                 if (livro == null)
                 {
                     resposta.Mensagem = "Nenhum registro encontrado!";
+                    resposta.Status = false;
                     return resposta;
                 }
 
@@ -101,6 +103,7 @@ namespace TesteApiBiblioteca.Services.Autor
                 if (autor == null)
                 {
                     resposta.Mensagem = "Nenhum autor localizado!";
+                    resposta.Status = false;
                     return resposta;
                 }
                 autor.Nome = autorEdicaoDto.Nome;
@@ -131,6 +134,7 @@ namespace TesteApiBiblioteca.Services.Autor
                 if (autor == null)
                 {
                     resposta.Mensagem = "Nenhum autor localizado!";
+                    resposta.Status = false;
                     return resposta;
                 }
                 _context.Remove(autor);

@@ -8,6 +8,7 @@ import ListarLivros from "./Pages/ListarLivros";
 import CriarLivro from "./Pages/CriarLivro";
 import EditarLivro from "./Pages/EditarLivro";
 import ExcluirLivro from "./Pages/ExcluirLivro";
+import LivrosPorAutor from "./Pages/LivrosPorAutor";
 import './styles/App.css';
 
 export default function App() {
@@ -38,6 +39,7 @@ export default function App() {
           <Route path="/CriarLivro" element={<CriarLivro />} />
           <Route path="/EditarLivro" element={<EditarLivro />} />
           <Route path="/ExcluirLivro" element={<ExcluirLivro />} />
+          <Route path="/autores/:id/livros" element={<LivrosPorAutor />} />
         </Routes>
       </main>
     </BrowserRouter>

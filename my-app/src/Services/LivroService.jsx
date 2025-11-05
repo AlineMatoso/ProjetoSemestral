@@ -4,6 +4,9 @@ export const ListarLivros = async () => {
   return request("Livro/ListarLivros");
 };
 
+export const BuscarLivroPorAutor = (idAutor) =>
+  request(`Livro/BuscarLivroPorIdAutor/${idAutor}`);
+
 export const CriarLivro = (livro) =>
   request("Livro/CriarLivro", {
     method: "POST",

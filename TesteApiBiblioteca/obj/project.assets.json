@@ -1770,11 +1770,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Positivo\\software_visual\\TesteProjeto\\TesteApiBiblioteca\\TesteApiBiblioteca.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Positivo\\software_visual\\ProjetoSemestral\\TesteApiBiblioteca\\TesteApiBiblioteca.csproj",
       "projectName": "TesteApiBiblioteca",
-      "projectPath": "C:\\Users\\user\\Positivo\\software_visual\\TesteProjeto\\TesteApiBiblioteca\\TesteApiBiblioteca.csproj",
+      "projectPath": "C:\\Users\\user\\Positivo\\software_visual\\ProjetoSemestral\\TesteApiBiblioteca\\TesteApiBiblioteca.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\Positivo\\software_visual\\TesteProjeto\\TesteApiBiblioteca\\obj\\",
+      "outputPath": "C:\\Users\\user\\Positivo\\software_visual\\ProjetoSemestral\\TesteApiBiblioteca\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"

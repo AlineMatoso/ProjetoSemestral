@@ -22,6 +22,7 @@ namespace TesteApiBiblioteca.Services.Livro
                 if (livro == null)
                 {
                     resposta.Mensagem = "Nenhum registro localizado!";
+                    resposta.Status = false;
                     return resposta;
                 }
 
@@ -49,11 +50,13 @@ namespace TesteApiBiblioteca.Services.Livro
                 if (autor == null)
                 {
                     resposta.Mensagem = "Nenhum registro de autor encontrado!";
+                    resposta.Status = false;
                     return resposta;
                 }
                 if (autor.Livros == null || !autor.Livros.Any())
                 {
                     resposta.Mensagem = "Nenhum registro de livros encontrado!";
+                    resposta.Status = false;
                     return resposta;
                 }
                 resposta.Dados = autor.Livros.ToList();
@@ -80,6 +83,7 @@ namespace TesteApiBiblioteca.Services.Livro
                 if (autor == null)
                 {
                     resposta.Mensagem = "Nenhum registro de autor encontrado!";
+                    resposta.Status = false;
                     return resposta;
                 }
 
@@ -116,6 +120,7 @@ namespace TesteApiBiblioteca.Services.Livro
                 if (livro == null)
                 {
                     resposta.Mensagem = "Nenhum registro de livro localizado!";
+                    resposta.Status = false;
                     return resposta;
                 }
 
@@ -125,6 +130,7 @@ namespace TesteApiBiblioteca.Services.Livro
                 if (autor == null)
                 {
                     resposta.Mensagem = "Nenhum registro de autor encontrado!";
+                    resposta.Status = false;
                     return resposta;
                 }
 
@@ -155,6 +161,7 @@ namespace TesteApiBiblioteca.Services.Livro
                 if (livro == null)
                 {
                     resposta.Mensagem = "Nenhum registro de livro localizado!";
+                    resposta.Status = false;
                     return resposta;
                 }
                 _context.Remove(livro);

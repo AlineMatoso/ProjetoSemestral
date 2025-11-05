@@ -28,7 +28,9 @@ export default function getLivros() {
             <div className="cards-container">
                 {livros.map((livro) => (
                     <Card key={livro.id}>
-                       {livro.id}. {livro.titulo} Autor: {livro.autor.nome} {livro.autor.sobrenome}
+                       {livro.id}. {livro.titulo} 
+                       <br/><br/>
+                       Autor: {livro.autor.nome} {livro.autor.sobrenome}
                     </Card>
                 ))}
             </div>
