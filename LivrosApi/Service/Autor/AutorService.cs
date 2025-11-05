@@ -22,11 +22,12 @@ namespace LivrosApi.Controllers.AutorService
             _context = context;
         }
 
-        public  async Task<ResponseModel<List<AutorModel>>> CriarAutor(AutorCriacaoDto autorCriacaoDto)
+        public async Task<ResponseModel<List<AutorModel>>> CriarAutor(AutorCriacaoDto autorCriacaoDto)
         {
             ResponseModel<List<AutorModel>> resposta = new ResponseModel<List<AutorModel>>();
 
-            try{
+            try
+            {
                 var autor = new AutorModel()
                 {
                     Nome = autorCriacaoDto.Nome,
@@ -37,21 +38,19 @@ namespace LivrosApi.Controllers.AutorService
                 await _context.SaveChangesAsync();
 
                 resposta.Dados = await _context.Autores.ToListAsync();
-                
+
                 resposta.Mensagem = "Autor criado com sucesso!";
 
                 return resposta;
-                
-            } catch (Exception ex){
+
+            }
+            catch (Exception ex)
+            {
                 resposta.Mensagem = ex.Message;
                 resposta.Status = false;
                 return resposta;
             }
-            
-
-
         }
-
         public async Task<ResponseModel<List<AutorModel>>> EditarAutor(AutorEdicaoDto autorEdicaoDto)
         {
             ResponseModel<List<AutorModel>> resposta = new ResponseModel<List<AutorModel>>();
@@ -83,13 +82,7 @@ namespace LivrosApi.Controllers.AutorService
                 resposta.Status = false;
                 return resposta;
             }
-
-
-
-
-
         }
-
         async public Task<ResponseModel<List<AutorModel>>> ExcluirAutor(int idAutor)
         {
             ResponseModel<List<AutorModel>> resposta = new ResponseModel<List<AutorModel>>();
@@ -115,11 +108,7 @@ namespace LivrosApi.Controllers.AutorService
                 resposta.Status = false;
                 return resposta;
             }
-
-
-
         }
-
         async Task<ResponseModel<AutorModel>> AutorInterface.BuscarAutorPorId(int idAutor)
         {
             ResponseModel<AutorModel> resposta = new ResponseModel<AutorModel>();
@@ -140,7 +129,6 @@ namespace LivrosApi.Controllers.AutorService
                 return resposta;
             }
         }
-
         async Task<ResponseModel<AutorModel>> AutorInterface.BuscarAutorPorIdLivro(int idLivro)
         {
             ResponseModel<AutorModel> resposta = new ResponseModel<AutorModel>();
@@ -165,10 +153,7 @@ namespace LivrosApi.Controllers.AutorService
                 resposta.Status = false;
                 return resposta;
             }
-
-
         }
-
         async Task<ResponseModel<List<AutorModel>>> AutorInterface.ListarAutores()
         {
             ResponseModel<List<AutorModel>> resposta = new ResponseModel<List<AutorModel>>();

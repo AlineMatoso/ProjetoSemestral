@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/alinematosodelima/Desktop/Desenvolvimento de Soft. Visual/Projeto Aline/ProjetoSemestral/LivrosApi/LivrosApi.csproj": {}
+    "C:\\Users\\heros\\Documents\\Prs\\BSI\\Desenvolvimento de Software Visual\\ProjetoSemestral\\LivrosApi\\LivrosApi.csproj": {}
   },
   "projects": {
-    "/Users/alinematosodelima/Desktop/Desenvolvimento de Soft. Visual/Projeto Aline/ProjetoSemestral/LivrosApi/LivrosApi.csproj": {
+    "C:\\Users\\heros\\Documents\\Prs\\BSI\\Desenvolvimento de Software Visual\\ProjetoSemestral\\LivrosApi\\LivrosApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/alinematosodelima/Desktop/Desenvolvimento de Soft. Visual/Projeto Aline/ProjetoSemestral/LivrosApi/LivrosApi.csproj",
+        "projectUniqueName": "C:\\Users\\heros\\Documents\\Prs\\BSI\\Desenvolvimento de Software Visual\\ProjetoSemestral\\LivrosApi\\LivrosApi.csproj",
         "projectName": "LivrosApi",
-        "projectPath": "/Users/alinematosodelima/Desktop/Desenvolvimento de Soft. Visual/Projeto Aline/ProjetoSemestral/LivrosApi/LivrosApi.csproj",
-        "packagesPath": "/Users/alinematosodelima/.nuget/packages/",
-        "outputPath": "/Users/alinematosodelima/Desktop/Desenvolvimento de Soft. Visual/Projeto Aline/ProjetoSemestral/LivrosApi/obj/",
+        "projectPath": "C:\\Users\\heros\\Documents\\Prs\\BSI\\Desenvolvimento de Software Visual\\ProjetoSemestral\\LivrosApi\\LivrosApi.csproj",
+        "packagesPath": "C:\\Users\\heros\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\heros\\Documents\\Prs\\BSI\\Desenvolvimento de Software Visual\\ProjetoSemestral\\LivrosApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/alinematosodelima/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\heros\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -38,7 +38,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net9.0": {
@@ -82,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

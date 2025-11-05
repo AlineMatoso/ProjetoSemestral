@@ -28,8 +28,8 @@ namespace LivrosApi.Controllers
             return Ok(autores);
         }
 
-        [HttpGet("BuscarAutoriPorId/{idAutor}")]
-        public async Task<ActionResult<ResponseModel<AutorModel>>> BuscarAutoriPorId(int idAutor)
+        [HttpGet("BuscarAutorPorId/{idAutor}")]
+        public async Task<ActionResult<ResponseModel<AutorModel>>> BuscarAutorPorId(int idAutor)
         {
             var autor = await _autorInterface.BuscarAutorPorId(idAutor);
             return Ok(autor);
@@ -57,12 +57,10 @@ namespace LivrosApi.Controllers
         }
 
         [HttpDelete("ExcluirAutor")]
-         public async Task<ActionResult<ResponseModel<List<AutorModel>>>> ExcluirAutor(int idAutor)
+        public async Task<ActionResult<ResponseModel<List<AutorModel>>>> ExcluirAutor(int idAutor)
         {
             var autores = await _autorInterface.ExcluirAutor(idAutor);
             return Ok(autores);
         }
-      
     }
 }
-
