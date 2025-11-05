@@ -130,10 +130,17 @@ namespace TesteApiBiblioteca.Services.Autor
             try
             {
                 var autor = await _context.Autores
+                    .Include(l => l.Livros)
                     .FirstOrDefaultAsync(autorBanco => autorBanco.Id == idAutor);
                 if (autor == null)
                 {
                     resposta.Mensagem = "Nenhum autor localizado!";
+                    resposta.Status = false;
+                    return resposta;
+                }
+                if (autor.Livros != null && autor.Livros.Any())
+                {
+                    resposta.Mensagem = "Não é possível excluir um autor que possui livros cadastrados!";
                     resposta.Status = false;
                     return resposta;
                 }

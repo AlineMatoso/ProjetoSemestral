@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { BuscarLivroPorAutor } from "../Services/LivroService";
+import Card from "../Components/Card.jsx";
 
 export default function LivrosPorAutor() {
   const { id } = useParams();
@@ -23,11 +24,13 @@ export default function LivrosPorAutor() {
     <div>
       <h1>Livros do Autor {livros[0]?.autor?.nome} {livros[0]?.autor?.sobrenome} </h1>
       {mensagem && <p>{mensagem}</p>}
-        <ul>
+        <div className="cards-container">
           {livros.map((livro) => (
-            <li key={livro.id}>{livro.titulo}</li>
+            <Card key={livro.id}>
+                {livro.id}.{livro.titulo}
+            </Card>
           ))}
-        </ul>
+        </div>
     </div>
   );
 }
